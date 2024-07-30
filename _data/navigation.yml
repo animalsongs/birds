@@ -1,0 +1,14 @@
+# main links
+main:
+  - title: "Home"
+    url: /
+  - title: "Use"
+    url: /use/
+  - title: "Results"
+    url: /results/
+  - title: "GitHub"
+    url: https://github.com/animalsongs/birdsongs
+    # - title: "Sample Collections"
+  #   url: /collection-archive/
+  # - title: "Sitemap"
+  #   url: /sitemap/
