@@ -13,69 +13,86 @@ Here you will find a tutorial on how to download, install, and use the `birdsong
 
 # Installation
 
+
 ## Requirments
 
-`birdsong` is implemented in Python 3.8 but it works for any latest Python version. The package requirements can be found at [requirements.txt](https://github.com/saguileran/birdsongs/blob/main/requirements.txt).
+`birdsong` is implemented in Python 3.10 but is also tested in Python 3.11 and 3.12. The required packages are listed in the file [requirements.txt](./requirements.txt).
+    
+## Set Up Virtual Environment 
 
-## Setup Python Environment
+For easyness and improve user expierience you can use install the package via docker or python environments.
 
-If you are using Anaconda, it is always a good practice to create a new environment to test new packages. For that, use the following command lines:
+### Python Environment
+
+```bash
+sudo apt install python3-venv  # install virtual environments
+python3 -m venv venv           # create venv
+source venv/bin/activate       # activate venv
+```
+
+If you are working on Windows, activate the venv with ```source venv/bin/Activate```.
+
+
+### Conda Environment
 
 ```bash
 conda create -n birdsongs python=3.12
 conda activate birdsong
 ```
-When you finished using the birdsongs package just enter `conda deactivate` to disable the birdsongs environment. 
 
-This can be also done in vsc using Python environments.
-    
-## Downloading
+### Docker
 
-To use birdsongs, clone the main branch of the repository and go to its root folder.
+In process...
+
+```bash
+docker compose up --build
+```
+
+### Download Package
+
+First of all, clone the the **birdsongs** repository and enter to it.
 
 ```bat
-git clone  https://github.com/saguileran/birdsongs.git --single-branch
+git clone  https://github.com/saguileran/birdsongs.git
 cd birdsongs
 ```
 
-You can clone the whole repository using `git clone https://github.com/saguileran/birdsongs.git` but since it is huge only the main branch is enough. To change the branch use the command `git checkout branch_name` following the branch name of interest.
+### Install Package
 
-The next step is to install the required packages, any of the following command lines will work:
+If you are using a version of Python higher than 3.10, to listening the audios you must install playsound. For that use the following command:
 
 ```bat
-python -m pip install -r ./requirements.txt
-```
-
-If you are using a version of Python higher than 3.10, to listening the audios you must execute 
-
-```python
 pip install playsound@git+https://github.com/taconi/playsound
 ```
 
-In other case just execute `pip install playsound`.
+The next step is to install the package and the required librearies. There are two options:
 
-<!--
-You can now use the package in a Python terminal opened in the birdsongs folder. 
+1. Using pip
 
-To use the package from any folder install the repository, this can be done with any of the two following lines
--->
+    ```bash
+    pip install .
+    ``` 
 
-Now, install the birdsong package using any one of the following lines
+2. Using [poetry](https://python-poetry.org/). First, install poetry
 
-```bat
-python setup.py install
-python -m pip install .
-```
+    ```bat
+    sudo apt update
+    sudo apt install pipx
+    pipx ensurepath
+    ```
 
-or using pip (not recomended)
-```bat
-pip install -e .
-pip install .
-```
+    for more information visit [Installing pipx](https://pipx.pypa.io/stable/installation/#installing-pipx). Then, install poetry with `pipx install poetry`. Finally, install **birdsongs** with: 
 
-That's all. Now let's create a synthetic birdsong!
+    ```bat
+    poetry install
+    ```
 
-Take a look at the tutorials notebooks for basic uses: physical model implementation, [motor-gestures.ipynb](https://github.com/saguileran/birdsongs/blob/main/tutorials/motor-gestures.ipynb); define and generate a syllable from a recorded birdsong, [syllable.ipynb](https://github.com/saguileran/birdsongs/blob/main/tutorials/syllable.ipynb); or to generate a whole birdsong, several syllables, [birdsong.ipynb](https://github.com/saguileran/birdsongs/blob/main/tutorials/birdsong.ipynb),
+If you are using an IDE, after install the package you have to reset the IDE. 
+
+That's all!. Now let's create a synthetic birdsong!
+
+>[!NOTE]
+>Take a look at the tutorials notebooks for basic uses: physical model implementation, [Motor_Gestures.ipynb](./tutorials/Motor_Gestures.ipynb); define and generate a syllable from a recorded sample, [Syllable.ipynb](./tutorials/Syllable.ipynb); to generate a whole birdsong, several syllables, [Birdsong.ipynb](./tutorials/Birdsong.ipynb); or if you already create a synthetic birdsongs and save its motor gesture, you can use the model as a data augmentation technique, [Data_Augmentation.ipynb](./tutorials/Data_Augmentation.ipynb).
 
 # Use
 
