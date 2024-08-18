@@ -37,7 +37,7 @@ If you are working on Windows, activate the venv with ```source venv/bin/Activat
 
 ```bash
 conda create -n birdsongs python=3.12
-conda activate birdsong
+conda activate birdsongs
 ```
 
 ### Docker
